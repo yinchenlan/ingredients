@@ -103,7 +103,7 @@ public class IngredientsParser {
 		} else {
 			tl = lc.toLowerCase();
 		}
-		ingredients.setTranslatedText(lc);
+		ingredients.setTranslatedText(tl);
 		for (String allergen : allergens) {
 			if (tl.contains(allergen)) {
 				ingredients.addAllergen(new Allergen(allergen));
