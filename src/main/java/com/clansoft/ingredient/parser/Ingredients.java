@@ -11,6 +11,7 @@ public class Ingredients {
 	}
 	private Set<Ingredient> ingredients;
 	private Set<Allergen> allergens;
+	private String translatedText;
 
 	public Set<Ingredient> getIngredients() {
 		return ingredients;
@@ -27,5 +28,14 @@ public class Ingredients {
 	public Set<Allergen> getAllergens() {
 		return allergens;
 	}
+
+	public String getTranslatedText() {
+		return translatedText;
+	}
+
+	public void setTranslatedText(String translatedText) {
+		this.translatedText = translatedText;
+	}
+	
 	
 }

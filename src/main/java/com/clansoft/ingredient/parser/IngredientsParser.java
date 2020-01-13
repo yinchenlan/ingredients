@@ -90,8 +90,9 @@ public class IngredientsParser {
 		Detection detection = translate.detect(annotation.getDescription());
 		String language = detection.getLanguage();
 		String[] nonAllergens = new String[] { "water", "banana", "wheat", "soy", "sugar", "rice", "beef", "chicken", "cocoa",
-				"salt", "milk" };
-		String[] allergens = new String[] { "peanut", "walnut", "cashew", "pecan", "hazelnut", "sesame" };
+				"salt", "milk",  };
+		String[] allergens = new String[] { 
+				"peanut", "walnut", "cashew", "pecan", "hazelnut", "sesame", "milk", "dairy" };
 		String lc = annotation.getDescription();
 		String tl = lc;
 		if (!language.equals("en")) {
@@ -102,6 +103,7 @@ public class IngredientsParser {
 		} else {
 			tl = lc.toLowerCase();
 		}
+		ingredients.setTranslatedText(lc);
 		for (String allergen : allergens) {
 			if (tl.contains(allergen)) {
 				ingredients.addAllergen(new Allergen(allergen));
