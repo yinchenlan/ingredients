@@ -75,7 +75,9 @@ public class IngredientsParser {
 					// For full list of available annotations, see http://g.co/cloud/vision/docs
 					Ingredients ingredients = new Ingredients();
 					List<EntityAnnotation> annotations = res.getTextAnnotationsList();
-					process(ingredients, annotations.get(0), translate);
+					if (!annotations.isEmpty()) {
+						process(ingredients, annotations.get(0), translate);
+					}
 					return Optional.of(ingredients);
 				}
 			}
