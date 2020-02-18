@@ -1,5 +1,12 @@
 package com.clansoft.ingredient.data.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +19,11 @@ public class ApplicationUser {
     private long id;
     private String username;
     private String password;
+    
+    @ElementCollection
+    @CollectionTable(name = "user_allergens", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "allergen")
+    private Set<String> allergens = new HashSet<>();
 
     public long getId() {
         return id;
