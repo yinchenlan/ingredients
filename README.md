@@ -1,3 +1,5 @@
+This is the backend for the allergens flutter application.
+
 # Getting Started
 
 ## Create User
